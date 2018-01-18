@@ -1,0 +1,250 @@
+Last login: Wed Jan 17 13:53:49 on ttys015
+aturek@aturek-mbpro ~> cd oss/python-lessons/
+aturek@aturek-mbpro ~/oss/python-lessons> python
+Python 2.7.13 (default, Dec 18 2016, 07:03:34)
+[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> poorly_formed = '   boop '
+>>> well_formed = poorly_formed.strip().capitalize()
+>>> well_formed
+'Boop'
+>>> import urllib2
+>>> response = urllib2.urlopen('https://github.com/dwyl/english-words/raw/master/words.txt')
+>>> all_text = response.read()
+>>> all_text[:500]
+"2\n1080\n&c\n10-point\n10th\n11-point\n12-point\n16-point\n18-point\n1st\n2,4,5-t\n2,4-d\n20-point\n2D\n2nd\n30-30\n3D\n3-D\n3M\n3rd\n48-point\n4-D\n4GL\n4H\n4th\n5-point\n5-T\n5th\n6-point\n6th\n7-point\n7th\n8-point\n8th\n9-point\n9th\na\na'\na-\nA&M\nA&P\nA.\nA.A.A.\nA.B.\nA.B.A.\nA.C.\nA.D.\nA.D.C.\nA.F.\nA.F.A.M.\nA.G.\nA.H.\nA.I.\nA.I.A.\nA.I.D.\nA.L.\nA.L.P.\nA.M.\nA.M.A.\nA.M.D.G.\nA.N.\na.p.\na.r.\nA.R.C.S.\nA.U.\nA.U.C.\nA.V.\na.w.\nA.W.O.L.\nA/C\nA/F\nA/O\nA/P\nA/V\nA1\nA-1\nA4\nA5\nAA\nAAA\nAAAA\nAAAAAA\nAAAL\nAAAS\nAaberg\nAachen\nAAE\nAAEE\nAAF\nAAG\naah\naahed\naahing\naa"
+>>> response = urllib2.urlopen('http://github.com/dwyl/english-words/raw/master/words.txt')
+>>> all_text = response.read()
+>>> all_text[:500]
+"2\n1080\n&c\n10-point\n10th\n11-point\n12-point\n16-point\n18-point\n1st\n2,4,5-t\n2,4-d\n20-point\n2D\n2nd\n30-30\n3D\n3-D\n3M\n3rd\n48-point\n4-D\n4GL\n4H\n4th\n5-point\n5-T\n5th\n6-point\n6th\n7-point\n7th\n8-point\n8th\n9-point\n9th\na\na'\na-\nA&M\nA&P\nA.\nA.A.A.\nA.B.\nA.B.A.\nA.C.\nA.D.\nA.D.C.\nA.F.\nA.F.A.M.\nA.G.\nA.H.\nA.I.\nA.I.A.\nA.I.D.\nA.L.\nA.L.P.\nA.M.\nA.M.A.\nA.M.D.G.\nA.N.\na.p.\na.r.\nA.R.C.S.\nA.U.\nA.U.C.\nA.V.\na.w.\nA.W.O.L.\nA/C\nA/F\nA/O\nA/P\nA/V\nA1\nA-1\nA4\nA5\nAA\nAAA\nAAAA\nAAAAAA\nAAAL\nAAAS\nAaberg\nAachen\nAAE\nAAEE\nAAF\nAAG\naah\naahed\naahing\naa"
+>>> all_text.split()[:10]
+['2', '1080', '&c', '10-point', '10th', '11-point', '12-point', '16-point', '18-point', '1st']
+>>> all_text.split()[999]
+'abounding'
+>>> vowels = 'aeiou'
+>>> sanitized = all_text.lower()
+>>> type(sanitized)
+<type 'str'>
+>>> vowel_counts = {}
+>>> for vowel in vowels:
+...   vowel_counts[vowel] = sanitized.count(vowel)
+...
+>>> vowel_counts
+{'a': 367425, 'i': 375393, 'e': 477140, 'u': 157477, 'o': 307801}
+>>> type(vowel_counts)
+<type 'dict'>
+>>> type(vowels)
+<type 'str'>
+>>> sanitized.count('e')
+477140
+>>> for vowelin vowels:
+KeyboardInterrupt
+>>> sum(vowel_counts.values())
+1685236
+>>> print 'homework 2 time'
+homework 2 time
+>>>
+>>>
+>>>
+>>> import urllib2
+>>> response = urllib2.urlopen('https://www.gutenberg.org/files/1342/1342-0.txt')
+>>> all_text = response.read()
+>>> type(all_text)
+<type 'str'>
+>>> all_text[:100]
+'\xef\xbb\xbfThe Project Gutenberg EBook of Pride and Prejudice, by Jane Austen\r\n\r\nThis eBook is for the use o'
+>>> all_text[100:300]
+'f anyone anywhere at no cost and with\r\nalmost no restrictions whatsoever.  You may copy it, give it away or\r\nre-use it under the terms of the Project Gutenberg License included\r\nwith this eBook or onl'
+>>> words = all_text.split()
+>>> len(words)
+124592
+>>> words[48482]
+'unseldom,'
+>>> words = all_text.
+KeyboardInterrupt
+>>> dir('')
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> help(''.replace)
+
+>>> punctuation = '.,;?!'
+>>> punctuation = '.,;?!"'
+>>> help(''.strip)
+
+>>> t =';punctuation!'
+>>> t
+';punctuation!'
+>>> t.strip(punctuation)
+'punctuation'
+>>> words = all_text.lower().split()
+>>> words[:100]
+['\xef\xbb\xbfthe', 'project', 'gutenberg', 'ebook', 'of', 'pride', 'and', 'prejudice,', 'by', 'jane', 'austen', 'this', 'ebook', 'is', 'for', 'the', 'use', 'of', 'anyone', 'anywhere', 'at', 'no', 'cost', 'and', 'with', 'almost', 'no', 'restrictions', 'whatsoever.', 'you', 'may', 'copy', 'it,', 'give', 'it', 'away', 'or', 're-use', 'it', 'under', 'the', 'terms', 'of', 'the', 'project', 'gutenberg', 'license', 'included', 'with', 'this', 'ebook', 'or', 'online', 'at', 'www.gutenberg.org', 'title:', 'pride', 'and', 'prejudice', 'author:', 'jane', 'austen', 'posting', 'date:', 'august', '26,', '2008', '[ebook', '#1342]', 'release', 'date:', 'june,', '1998', 'last', 'updated:', 'october', '17,', '2016', 'language:', 'english', 'character', 'set', 'encoding:', 'utf-8', '***', 'start', 'of', 'this', 'project', 'gutenberg', 'ebook', 'pride', 'and', 'prejudice', '***', 'produced', 'by', 'anonymous', 'volunteers', 'pride']
+>>> for i in range(len(words)):
+...   words[i] = words[i].strip(punctuation)
+...
+>>> words.index('june,')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: 'june,' is not in list
+>>> words.index('june')
+71
+>>> punctuation
+'.,;?!"'
+>>> type(punctuation)
+<type 'str'>
+>>> all_text.index('Chapter 1')
+706
+>>> book_text = all_text[706:]
+>>> book_text[:50]
+'Chapter 1\r\n\r\n\r\nIt is a truth universally acknowled'
+>>> words = book_text.lower().split()
+>>> for i in range(len(words)):
+...   words[i] = words[i].strip(punctuation)
+...
+>>> words[:100]
+['chapter', '1', 'it', 'is', 'a', 'truth', 'universally', 'acknowledged', 'that', 'a', 'single', 'man', 'in', 'possession', 'of', 'a', 'good', 'fortune', 'must', 'be', 'in', 'want', 'of', 'a', 'wife', 'however', 'little', 'known', 'the', 'feelings', 'or', 'views', 'of', 'such', 'a', 'man', 'may', 'be', 'on', 'his', 'first', 'entering', 'a', 'neighbourhood', 'this', 'truth', 'is', 'so', 'well', 'fixed', 'in', 'the', 'minds', 'of', 'the', 'surrounding', 'families', 'that', 'he', 'is', 'considered', 'the', 'rightful', 'property', 'of', 'some', 'one', 'or', 'other', 'of', 'their', 'daughters', '\xe2\x80\x9cmy', 'dear', 'mr', 'bennet,\xe2\x80\x9d', 'said', 'his', 'lady', 'to', 'him', 'one', 'day', '\xe2\x80\x9chave', 'you', 'heard', 'that', 'netherfield', 'park', 'is', 'let', 'at', 'last?\xe2\x80\x9d', 'mr', 'bennet', 'replied', 'that', 'he', 'had', 'not']
+>>> len(words)
+124487
+>>> word_counts = {}
+>>> for word in words:
+...   if word in word_counts:
+...     word_counts[word] += 1
+...   else:
+...     word_counts[word] = 1
+...
+>>> word_counts
+# HERE ALEX PRINTED A BUNCH OF BULLSHIT
+>>> dir()
+['__builtins__', '__doc__', '__name__', '__package__', 'all_text', 'book_text', 'i', 'poorly_formed', 'punctuation', 'response', 'sanitized', 't', 'urllib2', 'vowel', 'vowel_counts', 'vowels', 'well_formed', 'word', 'word_counts', 'words']
+>>> type(word_counts)
+<type 'dict'>
+>>> word_counts['goodness']
+9
+>>> dir(word_counts)
+['__class__', '__cmp__', '__contains__', '__delattr__', '__delitem__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'has_key', 'items', 'iteritems', 'iterkeys', 'itervalues', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values', 'viewitems', 'viewkeys', 'viewvalues']
+>>> for thing in word_counts.iteritems()[:10]:
+...   print thing
+...
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'dictionary-itemiterator' object has no attribute '__getitem__'
+>>> help({}.iteritems)
+
+>>> words_and_counts = list(word_count.iteritems())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'word_count' is not defined
+>>> words_and_counts = list(word_counts.iteritems())
+>>> words_and_counts[:10]
+[('bathing-place', 1), ('four', 33), ('woods', 7), ('hanging', 1), ('woody', 2), ('increase', 6), ('eligible', 7), ('immediately.\xe2\x80\x9d', 1), ('scold', 1), ('lord', 11)]
+>>> help({}.iteritems)
+
+>>> words_and_counts.sort()
+>>> words_and_counts[:10]
+[('$5,000)', 1), ('($1', 1), ('(801)', 1), ('(a)', 1), ('(an', 1), ('(and', 3), ('(any', 1), ('(available', 1), ('(b)', 1), ('(by', 1)]
+>>> words_and_counts = [(value, key) for key,value in word_counts]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: too many values to unpack
+>>> words_and_counts = [(value, key) for key, value in word_counts.items()]
+>>> words_and_counts[:10]
+[(1, 'bathing-place'), (33, 'four'), (7, 'woods'), (1, 'hanging'), (2, 'woody'), (6, 'increase'), (7, 'eligible'), (1, 'immediately.\xe2\x80\x9d'), (1, 'scold'), (11, 'lord')]
+>>> words_and_counts.sort()
+>>> words_and_counts[:10]
+[(1, '$5,000)'), (1, '($1'), (1, '(801)'), (1, '(a)'), (1, '(an'), (1, '(any'), (1, '(available'), (1, '(b)'), (1, '(by'), (1, '(c)')]
+>>> words_and_counts[-10:]
+[(1668, 'she'), (1746, 'i'), (1832, 'was'), (1903, 'in'), (1982, 'a'), (2165, 'her'), (3499, 'and'), (3701, 'of'), (4188, 'to'), (4476, 'the')]
+>>> words_and_counts[-20:]
+[(1084, 'with'), (1168, 'had'), (1174, 'as'), (1246, 'his'), (1247, 'you'), (1250, 'be'), (1295, 'he'), (1416, 'not'), (1425, 'it'), (1485, 'that'), (1668, 'she'), (1746, 'i'), (1832, 'was'), (1903, 'in'), (1982, 'a'), (2165, 'her'), (3499, 'and'), (3701, 'of'), (4188, 'to'), (4476, 'the')]
+>>> words_and_counts[-60:-100]
+[]
+>>> words_and_counts[-100:-60]
+[(176, 'without'), (179, 'own'), (185, 'little'), (185, 'well'), (187, 'most'), (191, 'now'), (197, 'every'), (198, 'after'), (198, 'might'), (198, 'time'), (199, 'may'), (203, 'how'), (203, 'some'), (205, 'think'), (209, 'can'), (213, 'only'), (214, 'soon'), (215, 'though'), (217, 'has'), (217, 'never'), (219, 'other'), (221, 'herself'), (223, 'before'), (231, 'know'), (237, 'we'), (240, 'bingley'), (245, 'should'), (251, 'did'), (252, 'jane'), (257, 'one'), (272, 'miss'), (277, 'bennet'), (281, 'who'), (282, 'than'), (297, '\xe2\x80\x9ci'), (303, 'any'), (312, 'am'), (313, 'must'), (318, 'much'), (321, 'if')]
+>>> [word for count, word in words_and_counts[-10:]]
+['she', 'i', 'was', 'in', 'a', 'her', 'and', 'of', 'to', 'the']
+>>> numbers = [
+...   37, 17, 4, 11, 17, 16, 22, 1, 5, 55,
+...   15, 4, 6, 1, 7, 17, 45, 19, 1, 30,
+...   8, 20, 22, 59, 15, 5, 2, 4, 7, 19,
+...   22, 13, 15, 59, 2, 2, 57, 11, 2, 4,
+...   4, 9, 2, 5, 24, 8, 52, 10, 20, 57,
+...   10, 20, 33, 11, 14, 7, 54, 42, 7, 49
+... ]
+>>> sum(numbers)
+1116
+>>> sum(numbers) / len(numbers)
+18
+>>> mean = numbers = [
+...   37, 17, 4, 11, 17, 16, 22, 1, 5, 55,
+...   15, 4, 6, 1, 7, 17, 45, 19, 1, 30,
+...   8, 20, 22, 59, 15, 5, 2, 4, 7, 19,
+...   22, 13, 15, 59, 2, 2, 57, 11, 2, 4,
+...   4, 9, 2, 5, 24, 8, 52, 10, 20, 57,
+...   10, 20, 33, 11, 14, 7, 54, 42, 7, 49
+... ]
+KeyboardInterrupt
+>>> mean = sum(numbers) / len(numbers)
+>>> numbers.sort()
+>>> numbers
+[1, 1, 1, 2, 2, 2, 2, 2, 4, 4, 4, 4, 4, 5, 5, 5, 6, 7, 7, 7, 7, 8, 8, 9, 10, 10, 11, 11, 11, 13, 14, 15, 15, 15, 16, 17, 17, 17, 19, 19, 20, 20, 20, 22, 22, 22, 24, 30, 33, 37, 42, 45, 49, 52, 54, 55, 57, 57, 59, 59]
+>>> 5 / 2 == 0
+False
+>>> 5 / 2
+2
+>>> 5 / 2
+2
+>>> 5 // 2
+2
+>>> float(5) / 2
+2.5
+>>> mean = float(sum(numbers)) / len(numbers)
+>>> mean
+18.6
+>>> def median(nums):
+...   if float(len(nums))/2 == len(nums)/2:
+...
+  File "<stdin>", line 2
+    if float(len(nums))/2 == len(nums)/2:
+                                        ^
+IndentationError: expected an indented block
+>>> float(5) / 2
+2.5
+>>> 5 / 2
+2
+>>> float(5) / 2 == 5 / 2
+False
+>>> def median(nums):
+...   if float(len(nums)) / 2 == len(nums) / 2:
+...     low_index = len(nums) / 2
+...     high_index = low_index + 1
+...     return (float(nums[low_index]) + nums[high_index]) / 2
+...   else:
+...     return nums[len(nums) / 2]
+...
+>>> median(numbers)
+14.5
+>>> len(numbers)
+60
+>>> numbers[30]
+14
+>>> numbers[31]
+15
+>>> from collections import Counter
+>>> help(Counter)
+
+>>> numbers = [
+...   37, 17, 4, 11, 17, 16, 22, 1, 5, 55,
+...   15, 4, 6, 1, 7, 17, 45, 19, 1, 30,
+...   8, 20, 22, 59, 15, 5, 2, 4, 7, 19,
+...   22, 13, 15, 59, 2, 2, 57, 11, 2, 4,
+...   4, 9, 2, 5, 24, 8, 52, 10, 20, 57,
+...   10, 20, 33, 11, 14, 7, 54, 42, 7, 49
+...
+KeyboardInterrupt
+>>> c = Counter(numbers)
+>>> c.most_common(1)
+[(2, 5)]
+>>> c.most_common(0)
+[]
+>>> c.most_common(1)
+[(2, 5)]
+>>>
